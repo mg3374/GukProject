@@ -13,7 +13,6 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Override
 	public MemberDto idSelect(String id) {
-		System.out.println(id+" seletct");
 		MemberDto member = dao.idSelect(id);  
 		return member;
 	}
