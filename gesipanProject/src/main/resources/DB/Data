@@ -1,0 +1,31 @@
+drop table reply;
+drop table board;
+drop table members;
+-----------------------------------
+create table members(
+id varchar2(20) PRIMARY KEY ,
+name varchar2(10),
+password varchar2(20),
+email varchar2(50),
+joindate date
+);
+
+create table Reply(
+id varchar2(10),
+Reply_no number primary KEY ,
+reply_date date,
+reply_content varchar2(200),
+constraint reply_id_fk FOREIGN KEY(id)
+REFERENCES members(id)
+);
+
+create table board(
+board_no number PRIMARY KEY,
+id varchar2(20),
+board_content varchar2(500),
+board_pass varchar2(10),
+board_name varchar2(20),
+board_file varchar2(100),
+board_date date,
+board_count number,
+constraint board_id_fk foreign key(id) REFERENCES members(id));

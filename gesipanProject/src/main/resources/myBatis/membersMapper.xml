@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guksi.dto.membersDto">
+<resultMap type="members" id="MemberMap">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="pass" property="pass"/>
+		<result column="email" property="email"/>
+		<result column="joindate" property="joindate"/>
+	</resultMap>
+	
+   <select id="idSelect" parameterType="string" resultMap="MemberMap">
+		select * from members where id=#{id}
+	</select>
+</mapper>
